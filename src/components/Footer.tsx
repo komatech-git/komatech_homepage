@@ -1,4 +1,4 @@
-import { Github, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Twitter, Instagram, Heart } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
             <p className="text-purple-200 leading-relaxed">
               駒澤大学プログラミング研究会
               <br />
-              「好き」を、社会に届けるプロダクトへ。
+              「好き」をカタチに。
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-purple-200">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="https://github.com/komatech"
+                href="https://github.com/orgs/komatech-git/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -54,7 +54,7 @@ export default function Footer() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com/komatech"
+                href="https://x.com/Komazawa_Tech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -62,20 +62,49 @@ export default function Footer() {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contact@komatech.example.com"
+                href="https://www.instagram.com/koma_tech/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
               >
-                <Mail className="w-5 h-5" />
+                <Instagram className="w-5 h-5" />
               </a>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-purple-200">Legal</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="https://google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-300 hover:text-white transition-colors text-sm"
+                  >
+                    特定商取引に基づく表記
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-300 hover:text-white transition-colors text-sm"
+                  >
+                    プライバシーポリシー
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-purple-300 flex items-center justify-center gap-2">
             Made with <Heart className="w-4 h-4 text-fuchsia-400 fill-current" /> by komatech
             <span className="mx-2">•</span>
-            © 2024 komatech
+            © 2026 komatech
           </p>
         </div>
       </div>

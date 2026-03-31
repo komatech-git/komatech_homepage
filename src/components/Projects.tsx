@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Map, Activity, Palette, Gamepad2 } from 'lucide-react';
+import { Map, Activity, Palette, Gamepad2, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
@@ -22,6 +22,7 @@ const projects = [
     description: '文芸×デジタルの共同主催イベント。文学部との協働で、新しい表現の場を創出。',
     tech: ['Event Planning', 'Community'],
     gradient: 'from-fuchsia-500 to-purple-500',
+    link: 'https://www.komazawa-u.ac.jp/news/extracurricular/2025/1024-17937.html',
   },
   {
     icon: Gamepad2,
@@ -52,42 +53,57 @@ export default function Projects() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative"
-            >
-              <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-xl`} />
-              <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-transparent h-full">
-                <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <project.icon className="w-8 h-8 text-white" />
-                </div>
+          {projects.map((project, index) => {
+            const Wrapper = project.link ? 'a' : 'div';
+            const wrapperProps = project.link
+              ? { href: project.link, target: "_blank", rel: "noopener noreferrer" }
+              : {};
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {project.title}
-                </h3>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative"
+              >
+                <Wrapper {...wrapperProps} className="block h-full">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-xl`} />
+                  <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-transparent h-full flex flex-col">
+                    <div className="flex justify-between items-start mb-6">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <project.icon className="w-8 h-8 text-white" />
+                      </div>
 
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                      {project.link && (
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-purple-500 transition-colors" />
+                      )}
+                    </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Wrapper>
+              </motion.div>
+            );
+          })}
         </div>
 
         <motion.div
@@ -98,7 +114,7 @@ export default function Projects() {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600">
-            これらは一例です。メンバー一人ひとりが、自分の「好き」を形にしています。
+            これらは一例です。メンバひとりひとりが、自分の「好き」を形にしています。
           </p>
         </motion.div>
       </div>

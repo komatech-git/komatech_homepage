@@ -4,20 +4,20 @@ import { Award, Briefcase, GraduationCap, Star } from 'lucide-react';
 const memberTypes = [
   {
     icon: Award,
-    title: 'Google AIアンバサダー',
-    description: 'AI/ML分野で活躍し、最新技術を学内外に発信。',
+    title: 'Google AI学生アンバサダー',
+    description: 'AI分野で活躍し、最新技術を学内外に発信。',
     color: 'from-yellow-500 to-orange-500',
   },
   {
     icon: Briefcase,
     title: '企業インターン',
-    description: 'スタートアップから大手企業まで、実践的な開発経験を積む。',
+    description: '1年生で大手企業GMOのインターンに参加',
     color: 'from-blue-500 to-indigo-500',
   },
   {
     icon: GraduationCap,
-    title: '他大学TA',
-    description: '教育にも貢献。他大学でティーチングアシスタントとして活動。',
+    title: 'オンライン大学TA',
+    description: '学んだ内容を教育にも貢献。他大学でティーチングアシスタントとして活動。',
     color: 'from-green-500 to-teal-500',
   },
   {

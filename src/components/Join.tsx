@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ExternalLink, Mail, Users } from 'lucide-react';
 
 const benefits = [
-  '入会金わずか500円',
+  '年会費わずか500円',
   '駒澤大学の学生なら誰でも歓迎',
   '文理問わず、初心者も大歓迎',
   '自由なプロジェクト参加',
@@ -116,9 +116,9 @@ export default function Join() {
                 活動情報
               </h4>
               <div className="space-y-2 text-gray-600">
-                <p><strong>活動日:</strong> 週1回のミーティング + 自由参加のもくもく会</p>
+                <p><strong>活動日:</strong> 週1回のミーティング</p>
                 <p><strong>場所:</strong> 駒澤大学キャンパス内</p>
-                <p><strong>会費:</strong> 入会金500円のみ（年会費なし）</p>
+                <p><strong>会費:</strong> 年会費500円のみ</p>
               </div>
             </div>
           </motion.div>
